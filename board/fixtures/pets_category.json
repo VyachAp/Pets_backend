@@ -1,0 +1,86 @@
+[
+    {
+        "model": "board.PetCategory",
+        "pk": 1,
+        "fields": {
+            "name": "Кошки"
+        }
+    },
+    {
+        "model": "board.PetCategory",
+        "pk": 2,
+        "fields": {
+            "name": "Собаки"
+        }
+    },
+    {
+        "model": "board.PetCategory",
+        "pk": 3,
+        "fields": {
+            "name": "Лошади"
+        }
+    },
+    {
+          "model": "board.PetCategory",
+          "pk": 4,
+          "fields": {
+              "name": "Хорьки"
+          }
+    },
+    {
+          "model": "board.PetCategory",
+          "pk": 5,
+          "fields": {
+              "name": "Рептилии"
+          }
+    },
+    {
+          "model": "board.PetCategory",
+          "pk": 6,
+          "fields": {
+              "name": "Грызуны"
+          }
+    },
+    {
+          "model": "board.PetCategory",
+          "pk": 7,
+          "fields": {
+              "name": "Амфибии"
+          }
+    },
+    {
+          "model": "board.PetCategory",
+          "pk": 8,
+          "fields": {
+              "name": "Птицы"
+          }
+    },
+    {
+          "model": "board.PetCategory",
+          "pk": 9,
+          "fields": {
+              "name": "Рыбы"
+          }
+    },
+    {
+          "model": "board.PetCategory",
+          "pk": 10,
+          "fields": {
+              "name": "Беспозвоночные"
+          }
+    },
+    {
+          "model": "board.PetCategory",
+          "pk": 11,
+          "fields": {
+              "name": "Сельскохозяйственные животные"
+          }
+    },
+  {
+          "model": "board.PetCategory",
+          "pk": 12,
+          "fields": {
+              "name": "Другое"
+          }
+    }
+]

@@ -1,0 +1,90 @@
+[
+  {
+          "model": "board.PetSubcategory",
+          "pk": 1,
+          "fields": {
+              "name": "Австралийская овчарка",
+              "category": 2
+          }
+  },
+    {
+          "model": "board.PetSubcategory",
+          "pk": 2,
+          "fields": {
+              "name": "Австралийский келли",
+              "category": 2
+          }
+    },
+    {
+          "model": "board.PetSubcategory",
+          "pk": 3,
+          "fields": {
+              "name": "Австралийский хилер",
+              "category": 2
+          }
+    },
+    {
+          "model": "board.PetSubcategory",
+          "pk": 4,
+          "fields": {
+              "name": "Акита ину",
+              "category": 2
+          }
+    },
+    {
+          "model": "board.PetSubcategory",
+          "pk": 5,
+          "fields": {
+              "name": "Аляскинский маламут",
+              "category": 2
+          }
+    },
+      {
+          "model": "board.PetSubcategory",
+          "pk": 6,
+          "fields": {
+              "name": "Американская акита",
+              "category": 2
+          }
+    },
+      {
+          "model": "board.PetSubcategory",
+          "pk": 7,
+          "fields": {
+              "name": "Американский бульдог",
+              "category": 2
+          }
+    },
+      {
+          "model": "board.PetSubcategory",
+          "pk": 8,
+          "fields": {
+              "name": "Американский кокер спаниэль",
+              "category": 2
+          }
+    },
+   {
+          "model": "board.PetSubcategory",
+          "pk": 9,
+          "fields": {
+              "name": "Абиссинская кошка",
+              "category": 1
+          }
+    },
+  {
+          "model": "board.PetSubcategory",
+          "pk": 10,
+          "fields": {
+              "name": "Американская короткошерстная кошка",
+              "category": 1
+          }
+    },
+  {
+          "model": "board.PetSubcategory",
+          "pk": 11,
+          "fields": {
+              "name": "Американский бобтейл длинношерстный",
+              "category": 1
+          }
+    }
+]
