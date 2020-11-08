@@ -1,8 +1,7 @@
-from board.views import PetCategoriesView, PetSubcategoriesView
+from board.views import PetCategoriesView, PetSubcategoriesView, PetPostsReadOnlyView
 from django.urls import path
 
 app_name = "api-v1"
-
 
 urlpatterns = [
     path("categories/", PetCategoriesView.as_view(), name="categories"),
@@ -10,4 +9,5 @@ urlpatterns = [
         "categories/<str:category_number>/",
         PetSubcategoriesView.as_view(),
         name="subcategories",
-    )]
+    ),
+    path("posts/", PetPostsReadOnlyView.as_view(), name='posts')]

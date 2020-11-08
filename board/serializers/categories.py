@@ -9,7 +9,7 @@ class PetCategoryReadOnlySerializer(ModelSerializer):
 
 
 class PetSubcategoryReadOnlySerializer(ModelSerializer):
-    category = PetCategoryReadOnlySerializer(read_only=True)
+    category = PetCategoryReadOnlySerializer(source='pet_category.name', read_only=True)
 
     class Meta:
         model = PetSubcategory
