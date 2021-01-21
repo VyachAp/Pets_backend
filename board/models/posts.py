@@ -11,7 +11,7 @@ class PostPets(models.Model):
     price = models.DecimalField(decimal_places=2, max_digits=10, null=True)
     title = models.CharField("Название объявления", max_length=200)
     subcategory = models.ForeignKey('board.PetSubcategory', verbose_name='Подкатегория объявления',
-                                    on_delete=models.CASCADE)
+                                    on_delete=models.CASCADE, related_name='subcategory_post')
     year_of_birth = models.IntegerField(verbose_name='Год рождения', null=True)
     month_of_birth = models.IntegerField(verbose_name='Месяц рождения', null=True)
     day_of_birth = models.IntegerField(verbose_name='День рождения', null=True)

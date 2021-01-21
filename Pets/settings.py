@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'board',
     "rest_framework",
     "storages",
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [

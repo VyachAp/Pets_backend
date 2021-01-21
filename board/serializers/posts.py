@@ -4,7 +4,8 @@ from board.serializers.images import PetsImageReadOnlySerializer
 
 
 class PostPetsReadOnlySerializer(serializers.ModelSerializer):
-    images = PetsImageReadOnlySerializer(many=True, read_only=True)
+    images = PetsImageReadOnlySerializer(many=True, read_only=True, source='mainimage')
+    subcategory = serializers.CharField(source='subcategory.name')
 
     class Meta:
         model = PostPets
