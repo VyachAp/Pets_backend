@@ -1,2 +1,2 @@
 from .categories import PetSubcategoriesView, PetCategoriesView
-from .posts import PetPostsReadOnlyView
+from .posts import PostsView

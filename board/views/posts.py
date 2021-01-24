@@ -1,11 +1,12 @@
 from board.helpers.serializers import CollectionView
 from board.serializers.posts import PostReadOnlySerializer
-from board.models import Post, Images
+from board.models import Post
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 
-class PetPostsReadOnlyView(CollectionView):
-    http_method_names = ["get", "options"]
-    serializer_class = PostReadOnlySerializer
+class PostsView(CollectionView):
+    serializer_get = PostReadOnlySerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = Post.objects.all()
 
 

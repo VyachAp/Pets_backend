@@ -29,7 +29,7 @@ class MyAccountManager(BaseUserManager):
 class Account(AbstractBaseUser):
     email = models.EmailField(verbose_name="email", max_length=60, unique=True, blank=True, null=True)
     username = models.CharField(max_length=30, unique=True, blank=True, null=True)
-    phone = models.CharField(max_length=20, unique=True, null=True)
+    phone = models.CharField(max_length=20, unique=True, null=False)
     name = models.CharField(max_length=20, null=True, blank=True)
     surname = models.CharField(max_length=20, null=True, blank=True)
     date_joined = models.DateTimeField(verbose_name='date joined', auto_now_add=True)

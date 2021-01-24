@@ -2,7 +2,7 @@ from rest_framework.response import Response
 from Pets.settings import TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, VERIFY_SID
 from rest_framework import status, generics
 from rest_framework_jwt.settings import api_settings
-from accounts.api.serializers import UserSerializer
+from accounts.api.serializers import UserSerializer, AccountLoginSerializer, AccountVerifySerializer
 from rest_framework import generics
 from twilio.rest import Client
 from accounts.models import Account
@@ -30,6 +30,7 @@ class UserDetail(generics.RetrieveAPIView):
 
 
 class UserLogin(generics.CreateAPIView):
+    serializer_class = AccountLoginSerializer
 
     def post(self, request, *args, **kwargs):
         phone = request.data.get('phone', None)
@@ -49,6 +50,7 @@ class UserLogin(generics.CreateAPIView):
 
 
 class UserVerify(generics.CreateAPIView):
+    serializer_class = AccountVerifySerializer
 
     def post(self, request, *args, **kwargs):
         phone = request.data.get('phone', None)
