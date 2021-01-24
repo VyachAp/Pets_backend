@@ -1,4 +1,4 @@
-from board.views import PetCategoriesView, PetSubcategoriesView, PostsView
+from board.views import PetCategoriesView, PetSubcategoriesView, PostsView, PostView
 from django.urls import path, re_path
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -14,7 +14,8 @@ urlpatterns = [
         PetSubcategoriesView.as_view(),
         name="subcategories",
     ),
-    path("posts/", PostsView.as_view(), name='posts')]
+    path("posts/", PostsView.as_view(), name='posts'),
+    path("post/<int:pk>", PostView.as_view(), name='post')]
 
 if settings.DEBUG:
     schema_view = get_schema_view(

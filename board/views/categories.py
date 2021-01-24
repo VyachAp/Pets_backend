@@ -1,4 +1,4 @@
-from board.helpers.serializers import CollectionView
+from board.helpers._views import CollectionView
 from board.serializers.categories import PetCategoryReadOnlySerializer, PetSubcategoryReadOnlySerializer
 from board.models import PetCategory, PetSubcategory
 from rest_framework.generics import ListAPIView
