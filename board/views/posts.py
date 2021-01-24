@@ -1,11 +1,11 @@
 from board.helpers.serializers import CollectionView
-from board.serializers.posts import PostPetsReadOnlySerializer
-from board.models import PostPets, PetsImageModel
+from board.serializers.posts import PostReadOnlySerializer
+from board.models import Post, Images
 
 
 class PetPostsReadOnlyView(CollectionView):
     http_method_names = ["get", "options"]
-    serializer_class = PostPetsReadOnlySerializer
-    queryset = PostPets.objects.all()
+    serializer_class = PostReadOnlySerializer
+    queryset = Post.objects.all()
 
 

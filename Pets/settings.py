@@ -132,6 +132,8 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+
+# ======= AWS SETTINGS =============
 AWS_ACCESS_KEY_ID = 'AKIAJB2SVGUDG3PU4I3Q'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'images-pets-ru'
@@ -145,5 +147,10 @@ STATIC_URL = "https://s3.amazonaws.com/%s/static/" % AWS_STORAGE_BUCKET_NAME
 AWS_DEFAULT_ACL = ''
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
 # IMAGES_URL = "https://s3.amazonaws.com/%s/static/images/" % AWS_STORAGE_BUCKET_NAME
+
+
+# ======= TWILIO SETTINGS =============
+TWILIO_ACCOUNT_SID = 'AC5d113d0533b67cab021d831918d3cde1'
+TWILIO_AUTH_TOKEN = '89100f24a025435918a74a90bfb4f1f7'
+VERIFY_SID = 'VA16652c10c527b74590626510b73bb21e'

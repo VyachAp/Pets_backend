@@ -3,26 +3,21 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 
 class MyAccountManager(BaseUserManager):
-    def create_user(self, email, username, password=None):
-        if not email:
-            raise ValueError('Не введён e-mail')
-        if not username:
-            raise ValueError('Не введен никнейм')
+    def create_user(self, phone):
+        if not phone:
+            raise ValueError('Не введён номер телефона')
 
         user = self.model(
-            email=self.normalize_email(email),
-            username=username,
+            phone=phone
         )
 
-        user.set_password(password)
+        # user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, username, password):
+    def create_superuser(self, phone):
         user = self.create_user(
-            email=self.normalize_email(email),
-            password=password,
-            username=username,
+            phone=phone,
         )
         user.is_admin = True
         user.is_staff = True
@@ -32,9 +27,11 @@ class MyAccountManager(BaseUserManager):
 
 
 class Account(AbstractBaseUser):
-    email = models.EmailField(verbose_name="email", max_length=60, unique=True)
-    username = models.CharField(max_length=30, unique=True)
+    email = models.EmailField(verbose_name="email", max_length=60, unique=True, blank=True, null=True)
+    username = models.CharField(max_length=30, unique=True, blank=True, null=True)
     phone = models.CharField(max_length=20, unique=True, null=True)
+    name = models.CharField(max_length=20, null=True, blank=True)
+    surname = models.CharField(max_length=20, null=True, blank=True)
     date_joined = models.DateTimeField(verbose_name='date joined', auto_now_add=True)
     last_login = models.DateTimeField(verbose_name='last login', auto_now=True)
     is_admin = models.BooleanField(default=False)
@@ -42,13 +39,13 @@ class Account(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    USERNAME_FIELD = 'username'
+    REQUIRED_FIELDS = ['phone']
 
     objects = MyAccountManager()
 
     def __str__(self):
-        return self.email
+        return self.phone
 
     # For checking permissions. to keep it simple all admin have ALL permissons
     def has_perm(self, perm, obj=None):

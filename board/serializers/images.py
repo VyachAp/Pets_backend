@@ -1,8 +1,8 @@
 from rest_framework.serializers import ModelSerializer
-from board.models import PetsImageModel
+from board.models import Images
 
 
-class PetsImageReadOnlySerializer(ModelSerializer):
+class ImagesReadOnlySerializer(ModelSerializer):
     class Meta:
-        model = PetsImageModel
-        fields = ('mainimage',)
+        model = Images
+        fields = '__all__'
