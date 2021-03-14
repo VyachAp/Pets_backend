@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import PetSubcategory, PetCategory, Post, Images
+from .models import PetSubcategory, PetCategory, Post, ImagesPost
 
 admin.site.register(PetCategory)
 admin.site.register(PetSubcategory)
 admin.site.register(Post)
-admin.site.register(Images)
+admin.site.register(ImagesPost)

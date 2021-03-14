@@ -38,7 +38,7 @@ class PostView(SingleObjectsView):
         Частично изменить объявление по id
         """
         return super(PostView, self).patch(request, pk)
-    
+
     def delete(self, request, pk):
         """
         Удалить объявление по id

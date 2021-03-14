@@ -4,7 +4,7 @@ import uuid
 from board.helpers.images import get_upload_path
 
 
-class Images(models.Model):
+class ImagesPost(models.Model):
     uuid = models.UUIDField(
         primary_key=True, default=uuid.uuid4, editable=False,
     )
@@ -19,7 +19,7 @@ class Images(models.Model):
 
         verbose_name = "Фотография объявления животных"
         verbose_name_plural = "Фотографии объявления животных"
-        db_table = "images"
+        db_table = "images_post"
 
     def __str__(self):
         return f"PostPets {self.pk}: {self.title} - {self.created_at}"
