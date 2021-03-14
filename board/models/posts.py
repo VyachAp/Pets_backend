@@ -10,6 +10,8 @@ class Post(models.Model):
     description = models.TextField("Описание", null=True, blank=True)
     price = models.DecimalField(decimal_places=2, max_digits=10, null=True)
     title = models.CharField("Название объявления", max_length=200)
+    category = models.ForeignKey('board.PetCategory', verbose_name='Категория объявления',
+                                 on_delete=models.CASCADE, related_name='category_post')
     subcategory = models.ForeignKey('board.PetSubcategory', verbose_name='Подкатегория объявления',
                                     on_delete=models.CASCADE, related_name='subcategory_post')
     year_of_birth = models.IntegerField(verbose_name='Год рождения', null=True)

@@ -17,5 +17,5 @@ s3transfer==0.3.3
 six==1.15.0
 sqlparse==0.4.1
 urllib3==1.25.11
-
+drf_yasg==1.20.0
 twilio==6.51.0
