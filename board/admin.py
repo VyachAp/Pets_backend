@@ -5,3 +5,4 @@ admin.site.register(PetCategory)
 admin.site.register(PetSubcategory)
 admin.site.register(Post)
 admin.site.register(ImagesPost)
+
