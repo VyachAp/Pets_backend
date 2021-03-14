@@ -22,6 +22,7 @@ class PetSubcategory(models.Model):
 
     name = models.CharField("Название подкатегории", max_length=200, unique=True)
     category = models.ForeignKey(PetCategory, verbose_name='Категория', on_delete=models.CASCADE, related_name="pet_subcategory")
+    photo_url = models.CharField("URL фотографии", max_length=1024)
 
     class Meta:
         app_label = "board"
