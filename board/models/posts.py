@@ -14,9 +14,9 @@ class Post(models.Model):
                                  on_delete=models.CASCADE, related_name='category_post')
     subcategory = models.ForeignKey('board.PetSubcategory', verbose_name='Подкатегория объявления',
                                     on_delete=models.CASCADE, related_name='subcategory_post')
-    year_of_birth = models.IntegerField(verbose_name='Год рождения', null=True)
-    month_of_birth = models.IntegerField(verbose_name='Месяц рождения', null=True)
-    day_of_birth = models.IntegerField(verbose_name='День рождения', null=True)
+    year_of_birth = models.IntegerField(verbose_name='Год рождения', null=True, blank=True)
+    month_of_birth = models.IntegerField(verbose_name='Месяц рождения', null=True, blank=True)
+    day_of_birth = models.IntegerField(verbose_name='День рождения', null=True, blank=True)
     creation_date = models.DateTimeField(verbose_name='Дата и время создания объявления', default=datetime.now)
     update_date = models.DateTimeField(verbose_name='Дата и время обновления объявления', default=datetime.now)
 

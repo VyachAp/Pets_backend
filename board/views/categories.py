@@ -12,6 +12,12 @@ class PetCategoriesView(CollectionView):
     swagger_schema = SwaggerAutoSchema
     queryset = PetCategory.objects.all()
 
+    def get(self, request, *args, **kwargs):
+        """
+        Получение категорий животных
+        """
+        return super(PetCategoriesView, self).get(request, *args, **kwargs)
+
 
 class PetSubcategoriesView(ListAPIView):
     serializer_class = PetSubcategoryReadOnlySerializer
@@ -19,8 +25,10 @@ class PetSubcategoriesView(ListAPIView):
     swagger_schema = SwaggerAutoSchema
 
     def get(self, request, *args, **kwargs):
+        """
+        Получение подкатегорий по номеру категории животного (category_number)
+        """
         category_number = kwargs.get('category_number')
         queryset = self.queryset.filter(category=category_number)
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
-

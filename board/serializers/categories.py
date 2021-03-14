@@ -13,4 +13,4 @@ class PetSubcategoryReadOnlySerializer(ModelSerializer):
 
     class Meta:
         model = PetSubcategory
-        fields = ("name", "category",)
+        fields = ("name", "category", "photo_url")
